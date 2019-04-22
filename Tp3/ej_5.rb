@@ -2,11 +2,22 @@ def ingrese_cadena()
     cadena=gets.chomp
     if(cadena=="")
         puts "La cadena debe poseer al menos una letra"
-        return ingrese_cadena
+        return ingrese_cadena()
     else
         return cadena
     end
+end
 
+def abre_nombre(cadena)
+    first_name=" "
+    i=0
+    begin
+        first_name=first_name+cadena[i]
+        i=i+1
+    end until(cadena[i]==" "||i==cadena.length)
+    first_name=first_name+cadena[i]+cadena[i+1]+"."
+    return first_name
+    
 end
 #main
 puts "Consigna"
@@ -19,8 +30,13 @@ nombre=ingrese_cadena()
 
 puts "Ingrese su apellido"
 apellido=ingrese_cadena()
+nombre_completo=""
+if(nombre.length+apellido.length)>=10
+    nombre=abre_nombre(nombre)   
+end
+nombre_completo=nombre+" "+apellido
 
-
+puts "El nombre es "+nombre_completo
 
 
 
