@@ -29,7 +29,9 @@ def cadena_sin_vocales(cadena)
 	return caden_aux
 end
 #main
-
+puts "Consigna"
+puts "Escriba un programa que permita ingresar una cadena de más de 20 caracteres y devuelva la misma cadena
+pero sin vocales."
 cadena=ingreso_cadena
 cadena_nueva=cadena_sin_vocales(cadena)
 

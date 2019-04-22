@@ -21,7 +21,9 @@ def cantindad_palabras(cadena)
 	return cant_pal
 end
 #main
-
+puts "Consigna"
+puts "Realizar un programa donde el usuario ingrese una cadena de caracteres finalizada en un punto, y el programa
+retorne la cantidad de palabras ingresadas"
 cad=ingrese_cad
 cant_pal=cantindad_palabras(cad)
 

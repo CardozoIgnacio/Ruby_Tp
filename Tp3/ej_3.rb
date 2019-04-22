@@ -34,7 +34,9 @@ def cantidad_vocales(cadena)
 end
 
 #main
-
+puts "Consigna"
+puts "Escriba un programa que permita ingresar una cadena de más de 20 caracteres e informe cuantas vocales (de
+cada una) hay en la cadena ingresada"
 cad=ingresar_cad_20
 cant=cantidad_vocales(cad)
 

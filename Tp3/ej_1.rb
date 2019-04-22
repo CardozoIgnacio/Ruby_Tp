@@ -31,7 +31,9 @@ def eliminar(palabra,letra)
 end
 
 #main
-
+puts "Consigna"
+puts "Realizar un programa donde el usuario ingrese un string y una letra y retorne un string que no contenga la letra
+ingresada"
 puts "Ingrese una palabra"
 palabra=ingrese_palabra
 puts "Ingrese una letra"
