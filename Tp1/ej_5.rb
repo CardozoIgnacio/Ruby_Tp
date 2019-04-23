@@ -10,7 +10,9 @@ def coeficiente(a,b,c)
 	end
 
 end
-
+def ingreso_datos
+	return gets.chomp.to_i		
+end
 #main
 
 puts "Consigna"
@@ -24,5 +26,6 @@ print "Ingrese un coeficiente B:"
 b=ingreso_datos
 print "Ingrese un coeficiente C:"
 c=ingreso_datos
+coeficiente(a,b,c)
 
-
+final=gets.chomp
