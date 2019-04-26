@@ -13,7 +13,7 @@ def cantindad_palabras(cadena)
 	cant_pal=0
 	i=cadena.length-2
 	begin
-		if(cadena[i]==" ")
+		if(cadena[i]==" "||cadena[i]==".")
 			cant_pal=cant_pal+1
 		end
 		i=i-1
