@@ -9,27 +9,33 @@ def ingrese_cad()
 	end
 end
 
-def palabras_5car(oracion)
+def cant_palabras_B(oracion)
     i=0
     palabra=""
+    cant=0
     begin
         if(oracion[i] != " " && oracion[i]!=".")
             palabra=palabra+oracion[i]
         else
-            if (palabra.length<5)
-                puts palabra
+            if (palabra[0]=="b"||palabra[0]=="B")
+                cant=cant+1
             end
             palabra=""
         end
         i=i+1
     end until (oracion.length==i)
+    return cant
 end
+
+
+
 #main
 puts "Consigna"
-puts "Realizar un programa donde el usuario ingrese una frase u oración,y retorne todas las palabras con menos de 5 caracteres"
+puts "Realizar un programa donde el usuario ingrese una cadena de caracteres 
+y el programa retorne la cantidad de palabras que comienzan con la letra “b”."
 
-cad=ingrese_cad()
-palabras_5car(cad)
+oracion=ingrese_cad()
+num =cant_palabras_B(oracion)
+puts "La cantidad de palabras que tiene la letra B son #{num}"
 
-
-final=gets
+fnal=gets
