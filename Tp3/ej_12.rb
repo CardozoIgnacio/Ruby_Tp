@@ -63,6 +63,41 @@ def control_I(importe)
     end until(i==cad_num.length)
     return true
 end
+def control_F(fecha)
+    if fecha.length!=10
+        return false
+    else 
+        if (fecha[2]=="/"&& fecha[5]="/")||(fecha[2]=="-"&&fecha[5]=="-")
+            dia=fecha[0]+fecha[1]
+            mes=fecha[3]+fecha[4]
+            anio=fecha[6]+fecha[7]+fecha[8]+fecha[9]
+            return fecha(dia,mes,anio)
+        else
+            return false
+        end
+    end
+end
+#dd/mm/aaaa
+def fecha(dia,mes,anio)
+    if ((01..31)===dia.to_i)
+        if((01..12)===mes.to_i )&& es_valido(mes,dia)
+            if ((1900..2019)===anio.to_i)
+                return true
+            else
+                return false
+            end
+        else
+            return false
+        end
+    else
+        return false
+    end
+end
+
+def es_valido(mes,dia)
+    return true
+end
+
 
 #main
 puts"Consigna"
@@ -77,6 +112,6 @@ puts "Escriba un programa que permita ingresar distintos datos. Cada dato tiene 
  A veces las barras pueden reemplazarse con “-“. Debe controlar que los días pertenezcan a meses válidos."
 
  cadena=gets.chomp
- puts control_I(cadena)
+ puts ingreso(cadena)
 
  final=gets.chomp
