@@ -95,11 +95,70 @@ def fecha(dia,mes,anio)
 end
 
 def es_valido(mes,dia)
-    return true
+    if(mes=="1"||mes=="3"||mes=="5"||mes=="7"||mes=="8"||mes=="10"||mes=="12")
+        return (1..31)===dia.to_i
+    else
+        if(mes=="4"||mes=="6"||mes=="9"||mes=="11")
+            return (1..30)===dia.to_i
+        else
+            return (1..28)===dia.to_i
+        end
+    end
 end
+#    p: Es divisible entre 4
+#    q: Es divisible entre 100
+#    r: Es divisible entre 400
+#    p&(!q||r)   
+def ingreso(letra,dato)
+    if (letra=="A")
+        return control_A(dato)
+    end
+    if (letra=="E")
+        return control_E(dato)
+    end
+    if (letra=="D")
+        return control_D(dato)
+    end
+    if (letra=="I")
+        return control_I(dato)
+    end
+    if (letra=="F")
+        return control_F(dato)
+    end    
+end 
+def controlar_op(operacion)
+    if (operacion=="A"||operacion=="E"||operacion=="D"||operacion=="I"||operacion=="F")
+        return true
+    else
+        return false
+    end
+end
+def ingreso_dato()
+    puts "Seleccione dato a ingresar"
+    puts " 
+    >El dato identificado con “A” es un apellido.
+    >El dato identificado con “E” es un e-mail.
+    >El dato identificado con “D” .
+    >El dato identificado con “I”es un importe.
+    >El dato identificado como fecha “F“ formato dd/mm/aaaa."
+    operacion=gets.chomp
+    if controlar_op(operacion)
+        puts "Ingrese el dato asociado a la operacion"
+        dato=gets.chomp
+        if ingreso(operacion,dato)
+            puts "Dato ingresado es correcto"
+        else
+            puts "Datos ingresado no cumple con los parametros establecidos, por favor vuela a ingresar"
+            return ingreso_dato()
+        end
+    else
+        puts "Operacion seleccionada no valida,por favor vuelva a ingresar"
+        return ingreso_dato()
+    end
 
-
+end
 #main
+=begin
 puts"Consigna"
 puts "Escriba un programa que permita ingresar distintos datos. Cada dato tiene sus restricciones.
  Si el dato ingresado no cumple con las restricciones luego de validarlo, se debe volver a ingresar.
@@ -110,8 +169,6 @@ puts "Escriba un programa que permita ingresar distintos datos. Cada dato tiene 
  El dato identificado con “I”es un importe, y sólo acepta dígitos numéricos y ocasionalmente un solo punto decimal.
  El dato identificado como fecha debe contener dígitos numéricos y debe respetar un formato dd/mm/aaaa.
  A veces las barras pueden reemplazarse con “-“. Debe controlar que los días pertenezcan a meses válidos."
-
- cadena=gets.chomp
- puts ingreso(cadena)
-
+=end
+ingreso_dato()
  final=gets.chomp
