@@ -26,7 +26,7 @@ def comer_espacios(cadena)
 
         i=i+1
     end until(i==cadena.length)
-  cad_sin_espacios[cad_sin_espacios.length-1]="."
+    cad_sin_espacios[cad_sin_espacios.length-1]="."
     return cad_sin_espacios
 end
 #main
