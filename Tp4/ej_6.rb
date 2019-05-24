@@ -130,26 +130,26 @@ def fecha_mas_antigua(fecha1,fecha2)
         end
     end
 end
-def calc_anios_b(fecha1,fecha2)
+def cuenta_reg(fecha1,fecha2)
     fecha1,fecha2=fecha_mas_antigua(fecha1,fecha2)
     if(fecha1!=fecha2)
         begin
             fecha2=siguiente_dia(fecha2)
             d2,m2,a2=descomponer_fechas(fecha2)
-            if(d2=="01"&&m2=="01"&& es_bisiesto(a2.to_i))
-                puts "Años bisiesto: "+a2
-            end
+          
+            puts "EL dia es"+ fecha2
         end until(fecha1==fecha2)
     else
         puts "Las fechas son iguales"
     end
 end
 #main
-puts "Escriba  un  programa  que  permita  ingresar  dos  fechas  válidas  
-utilizando  lo  construido  en  el  ej. anterior y  se logre visualizar 
-todos los años bisiestos que hubo entre esas fechas ingresadas."
-puts "------------------------------------------------------------------"
+
+puts "Escriba  un  programa  similar  al  punto  2  pero  que  al  finalizar  el  ingreso genere  una “cuenta  regresiva”
+de días/meses y años desde la fecha más nueva hasta llegar a la fecha más vieja"
+puts"-------------------------------------------------------------------------------------------------------------------"
+
 fecha1=ingresgar_fecha()
 fecha2=ingresgar_fecha()
 
-anio_b=calc_anios_b(fecha1,fecha2)
+cuenta_reg(fecha1,fecha2)
