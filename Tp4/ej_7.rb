@@ -38,9 +38,6 @@ end
 =end
 def control_F(dia,mes,anio)
     valdio=false
-    
-
-
     if ((01..31)===dia.to_i)
        if((01..12)===mes.to_i)&&(es_valido(mes,dia)||(mes=="02"&&dia=="29")&& es_bisiesto(anio.to_i))
             if ((1900..2019)===anio.to_i)
@@ -101,20 +98,63 @@ def ingresgar_fecha()
         return ingresgar_fecha()
     end
 end
+=begin mes_cad(mes)
+    Dado un mes en string con el formato mm se retorna su equivalente en formato cadena MES.
+    @ mes : string con el formato mm.
+    return String con el nombre del mes.
+=end
+def mes_cad(mes)
+    cadena_mes=""
+    case mes
+    when  "01"
+        cadena_mes="Enero"
+    when "02"
+        cadena_mes="Febrero"
+    when "03"
+        cadena_mes="Marzo"
+    when "04"
+        cadena_mes="Abril"
+    when "05"
+        cadena_mes="Mayo"
+    when "06"
+        cadena_mes="Junio"
+    when "07"
+        cadena_mes="Julio"
+    when "08"
+        cadena_mes="Agosto"
+    when "09"
+        cadena_mes="Septiembre"
+    when "10"
+        cadena_mes="Octubre"
+    when "11"
+        cadena_mes="Noviembre"
+    when "12"
+        cadena_mes="Diciembre"
+    end
 
-#main
-puts "Escriba  un  programa  que  permita  ingresar  una  fecha  
-        en  formato  completo  (dd/mm/aaaa) como  String y devuelva  
-        TRUE  si  es  una  f válida  o  FALSE  si no  lo  es.  Tenga 
-        en  cuenta todas  las  posibilidades  que  puedan existir.
-        Los separados pueden ser tanto “/”como “-“."
-puts "Ingrese un fecha"
-fecha=gets.chomp
-
-if fecha_valida(fecha)
-    puts "Es una fecha valida"
-else
-    puts "No es una fecha valida"
+    return cadena_mes
 end
+
+=begin cabecera_carta()
+    Recibe una fecha y retona un string con el formato “Punta Alta, dd de mmmmmm de aaaa”.
+    @ fecha : string con el formato dd/mm/aaaa.
+    @ return : “Punta Alta, dd de mmmmmm de aaaa”
+=end
+def cabecera_carta(fecha)
+    dia,mes,anio=descomponer_fechas(fecha)
+    mes_nombre=mes_cad(mes)
+    return "Punta Alta,"+dia+" de "+ mes_nombre+ " de "+anio
+
+end
+
+puts "Escriba un programa que permita ingresar una fecha válida 
+y retorne la cadena “Punta Alta, dd de mmmmmm de aaaa”
+(Donde mmmmmmm es el nombredel mes en letras)"
+puts"----------------------------------------------------------"
+
+puts"Ingrese una fecha"
+fecha=ingresgar_fecha()
+
+puts cabecera_carta(fecha)
 
 final=gets.chomp

@@ -38,9 +38,6 @@ end
 =end
 def control_F(dia,mes,anio)
     valdio=false
-    
-
-
     if ((01..31)===dia.to_i)
        if((01..12)===mes.to_i)&&(es_valido(mes,dia)||(mes=="02"&&dia=="29")&& es_bisiesto(anio.to_i))
             if ((1900..2019)===anio.to_i)
@@ -102,19 +99,25 @@ def ingresgar_fecha()
     end
 end
 
-#main
-puts "Escriba  un  programa  que  permita  ingresar  una  fecha  
-        en  formato  completo  (dd/mm/aaaa) como  String y devuelva  
-        TRUE  si  es  una  f válida  o  FALSE  si no  lo  es.  Tenga 
-        en  cuenta todas  las  posibilidades  que  puedan existir.
-        Los separados pueden ser tanto “/”como “-“."
-puts "Ingrese un fecha"
-fecha=gets.chomp
 
-if fecha_valida(fecha)
-    puts "Es una fecha valida"
-else
-    puts "No es una fecha valida"
+=begin fecha_hoy()
+    Def para obtener la fecha actual
+    @ return  La fecha actual en forma dd/mm/aaaa.
+=end
+def fecha_hoy()
+    t = Time.now
+
+    dia_a= t.strftime("%d")
+    mes_a= t.strftime("%m")
+    anio_a= t.strftime("%Y")
+
+    anio_a= dia_a+"/" +mes_a +"/"+anio_a
+    return anio_a
 end
 
-final=gets.chomp
+
+puts "Escriba un programa que permita ingresar una 
+fecha válida de nacimiento de una persona y tomar la 
+fecha de la PC, y determinar el día que existe entre 
+esas dos fechas que representa la mitad de su vida"
+puts"------------------------------------------------"
