@@ -16,10 +16,12 @@ def res_prom(arry)
     end until(i==5)
     return aux
 end
-
+def mod(cad)
+    return cad[0]="c"
+end
 #main
 
-notas=generar_notas()
-prom=res_prom(notas)
-print notas
-print prom
+cad="hola"
+sol =mod(cad)
+
+print cad
