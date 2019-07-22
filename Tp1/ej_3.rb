@@ -6,6 +6,7 @@ def par(num)
 	end
 end
 
+
 def ingreso_datos()
 	puts "Ingrese un numero:"
 	num=gets.chomp.to_i
