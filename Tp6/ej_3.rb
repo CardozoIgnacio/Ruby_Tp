@@ -23,6 +23,7 @@ def diccionario(pal)
      definicion="No existe en el diccionario"
      if (dicc.has_key?(pal))
         definicion= dicc[pal]
+        
      else
         aux=parecido(pal,dicc.keys())
         if( aux!= 404)
