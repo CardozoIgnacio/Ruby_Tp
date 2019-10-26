@@ -21,6 +21,7 @@ class Lista
     def size()
         return @arry.size()
     end
+    
 
 
 
