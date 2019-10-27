@@ -119,3 +119,7 @@ puts "PAres"
 begin
     puts pilaP.desapilar()
 end until pilaP.size()==0
+
+puts "Agregue a la clase Pila del ej.1 un método (comportamiento) 
+llamado invertirpilaque invierta el contenido de la pila "
+

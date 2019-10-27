@@ -91,3 +91,9 @@ end until(cola.size()==5)
 begin 
     puts cola.desencolar()[0]
 end until (cola.size()==0)
+puts "Agregue a la clase Pila del ej.1 un método (comportamiento) 
+llamado invertirpilaque invierta el contenido de la pila "
+
+puts "Agregue a la clase Pila del ej.1 un método (comportamiento) 
+llamado invertirpilaque invierta el contenido de la pila "
+
