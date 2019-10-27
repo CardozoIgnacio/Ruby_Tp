@@ -117,8 +117,6 @@ pila1.apilar("1")
 pila1.apilar("0")
 
 
-
-
 pila1.invertirpila() 
 
 puts "La pila invertida es"
