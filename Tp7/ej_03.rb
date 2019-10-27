@@ -119,7 +119,7 @@ pila1.apilar("0")
 
 
 
-pila1.invertirpila()
+pila1.invertirpila() 
 
 puts "La pila invertida es"
 begin

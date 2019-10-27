@@ -88,6 +88,6 @@ begin
 end until(cola.size()==5)
 
 
-begin
+begin 
     puts cola.desencolar()[0]
 end until (cola.size()==0)

@@ -80,7 +80,7 @@ class Pila < Lista
                 pila_impares.apilar(elem)
             end
 
-        end until(size()==0)
+        end until(size()==0) 
 
         pila_impares.invertirpila()
         pila_pares.invertirpila()
