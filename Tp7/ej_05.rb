@@ -62,9 +62,11 @@ class Cola < Lista
     end
 
     def cola_nueva(pos)
-        if(pos>=0 && pos<size())    
-            
+        cola=Cola.new()
+        for a in pos..size()
+            cola.encolar(@arry[a])
         end
+        return cola
     end
 end
 
@@ -87,7 +89,14 @@ begin
     end
 end until(cola.size()==5)
 
+cola1=cola.cola_nueva(2)
+
+
 
 begin 
-    puts cola.desencolar()[0]
-end until (cola.size()==0)
+    elem=cola1.desencolar()
+    puts elem[0]
+    puts elem[1]
+    
+end until (cola1.size()==0)
+

@@ -22,6 +22,12 @@ class Lista
         return @arry.size()
     end
     
+    def print()
+        @arry.each do |a|
+            puts a
+        end
+    end
+
 
 
 
