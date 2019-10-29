@@ -49,6 +49,15 @@ class Lista
     def last()
         return @arry.last()
     end
+
+    def sort()
+        @arry.sort
+    end
+
+    def add_pos(elem,pos)
+        @arry[pos]=elem
+        @arry.compact
+    end
 end
 
 class Cola < Lista
@@ -75,7 +84,16 @@ end
 class Cola_prioridad < Cola
     def initialize()
         super()
-        
+      
+    end
+
+    def encolar_prioridad(element,prioridad)
+        encolar([element,prioridad])
+       
+    end
+    def desencolar_prioridad()
+        primero=@arry_ordenado.first()
+        @arry_ordenado.remove(0) 
     end
 
 end
@@ -90,3 +108,7 @@ class Persona
         return @num
     end
 end
+
+
+colap=Cola_prioridad.new
+colap.encolar([5,2])
